@@ -11,3 +11,4 @@ The objective of this ...
 - Thomas Jefferson
 ## Author
 ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+Sasha Vigneron

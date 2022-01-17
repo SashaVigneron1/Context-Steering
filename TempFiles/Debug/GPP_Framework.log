@@ -1,0 +1,27 @@
+﻿  stdafx.cpp
+  EGeometry2DTypes.cpp
+  EInputManager.cpp
+  EMatrix2x3.cpp
+  ERigidBodyBox2D.cpp
+  EPhysicsWorldBox2D.cpp
+  ECamera2D.cpp
+  SDLDebugRenderer2D.cpp
+  SDLFrame.cpp
+  ETimer_SDL.cpp
+  EImmediateUI.cpp
+  SDLWindow.cpp
+  gl3w.c
+  main.cpp
+  App_Sandbox.cpp
+  SandboxAgent.cpp
+  App_SteeringBehaviors.cpp
+  Obstacle.cpp
+  SteeringAgent.cpp
+  SteeringBehaviors.cpp
+  BaseAgent.cpp
+  Generating Code...
+  Compiling...
+  NavigationColliderElement.cpp
+  Generating Code...
+  GPP_Framework.vcxproj -> C:\Users\sasha_7od7uy1\Desktop\ContextSteering\bin\Debug\GPP_Framework.exe
+  0 File(s) copied

@@ -68,7 +68,7 @@ public:
 private:
 	bool IsArrowInObstacle(const Elite::Vector2& start, const Elite::Vector2& dir, Obstacle* pObstacle);
 
-	bool m_InterpolateDangers = false;
+	bool m_InterpolateDangers = true;
 
 	std::vector<Obstacle*> m_pObstacles{};
 	size_t m_ArraySize = 16;

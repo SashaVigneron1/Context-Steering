@@ -15,7 +15,9 @@ We start off by creating the arrows, this is a very simple for loop, calculating
 Obviously, the size and the amount of arrows can be edited, experimenting with these variables can lead to different behaviours.
 For example, if you want to have an enemy that's able to detect and avoid obstacles from afar, you might want to increase the size of each arrow.
 But on the other hand, you might also want to increase the number of arrows, since, if you are looking far ahead, the gaps in between each direction grows, leading to potentially unseen obstacles, until your close. (See Image)
+
 ![Image_1](https://i.imgur.com/htM5qWv.png)
+
 On the other hand you also have to account the performance aspect. Since increasing the number of arrows will require more computations. 
 This however, does not apply to the size of the arrow, since my object detection is simply a distance check to the obstacle.
 

@@ -26,7 +26,11 @@ For this part we will use an std::vector of floats, each value in range of [0,1]
 The higher the value, the more likely it is the agent will go that direction.
 
 ### 3. Calculating Danger Values
+Of course we also have to account the actual obstacles in the scene. To do this we'll create another std::vector of floats, again with a value in range [0,1].
+To keep it simple, we'll start off by simply checking if the arrow is colliding with the obstacle, we'll put that specific arrow's danger value to 1. 
+If you want to, you can make it a little more complex, by actually interpolating this danger between 0 and 1, depending on the range of the obstacle.
 
+![Danger_1](/Footage/DangerValue.gif?raw=true "DangerValue")
 
 ### 4. How To Get The Final Direction
 

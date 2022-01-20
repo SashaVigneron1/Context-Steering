@@ -26,6 +26,7 @@ For each arrow, we will check if the arrow is colliding with an obstacle. If so,
 
 ![image](https://user-images.githubusercontent.com/45370607/150369429-f8d6f34a-60bb-4b82-a6be-cfe59620cf06.png)
 
+And there you have it! As I mentioned above, it's quite a simple algorithm!
 
 ## Let's Get Started!
 ### 1. Creating The Arrows
@@ -42,6 +43,15 @@ This however, does not apply to the size of the arrow, since my object detection
 ### 2. Calculating Interest Values
 For this part we will use an std::vector of floats, each value in range of [0,1]. 
 The higher the value, the more likely it is the agent will go that direction.
+In our case, we want to move towards a position we can define by the mouse cursor.
+To handle this, we will take the dot product of the arrow's direction, and the direction to the target we're headed towards.
+If this dot product is below 0, we know that this direction is headed in the opposite direction of the target, so we can set it's interest to 0.
+For the other arrows, we'll just set the interest value to the dot product's result.
+Doing this should already make the agent move in the direction of the target.
+
+(In my example, the length of the arrow represents it's importance)
+
+![Interest](/Footage/InterestValue.gif?raw=true "InterestValue")
 
 ### 3. Calculating Danger Values
 Of course we also have to account the actual obstacles in the scene. To do this we'll create another std::vector of floats, again with a value in range [0,1].

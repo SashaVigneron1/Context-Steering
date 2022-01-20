@@ -38,9 +38,9 @@ SteeringOutput ContextSteering::CalculateSteering(float deltaT, SteeringAgent* p
 	#pragma endregion
 
 	#pragma region RotateDirections
-	for (size_t i{}; i < m_ArraySize; i++)
+	for (size_t i{}; i < m_NrOfArrows; i++)
 	{
-		float angle = (int)i * (2 * (float)M_PI / m_ArraySize);
+		float angle = (int)i * (2 * (float)M_PI / m_NrOfArrows);
 		Vector2 RotatedVector{};
 		Vector2 rightVector{ 1,0 };
 
@@ -54,12 +54,12 @@ SteeringOutput ContextSteering::CalculateSteering(float deltaT, SteeringAgent* p
 	#pragma endregion
 
 	#pragma region CalculateInterests
-	Vector2 desired{ m_Target.Position - pAgent->GetPosition() };
-	desired = desired.GetNormalized();
+	Vector2 toTarget{ m_Target.Position - pAgent->GetPosition() };
+	toTarget = toTarget.GetNormalized();
 
-	for (size_t i{}; i < m_ArraySize; i++)
+	for (size_t i{}; i < m_NrOfArrows; i++)
 	{
-		float dot = m_Directions[i].GetNormalized().Dot(desired);
+		float dot = m_Directions[i].GetNormalized().Dot(toTarget);
 		if (dot <= 0.f)
 		{
 			m_Interests[i] = 0;
@@ -73,7 +73,7 @@ SteeringOutput ContextSteering::CalculateSteering(float deltaT, SteeringAgent* p
 
 	#pragma region CalculateDangers
 
-	for (size_t i{}; i < m_ArraySize; i++)
+	for (size_t i{}; i < m_NrOfArrows; i++)
 	{
 		bool active{};
 		for (size_t j{}; j < m_pObstacles.size(); j++)
@@ -110,21 +110,21 @@ SteeringOutput ContextSteering::CalculateSteering(float deltaT, SteeringAgent* p
 	// Render all arrows
 	if (pAgent->CanRenderBehavior())
 	{
-		for (size_t i{}; i < m_ArraySize; i++)
+		for (size_t i{}; i < m_NrOfArrows; i++)
 		{
 			DEBUGRENDERER2D->DrawDirection(pAgent->GetPosition(), m_Directions[i] * m_Interests[i], (m_Directions[i] * m_Interests[i]).Magnitude(), m_Colors[i], 0.4f);
 		}
 	}
 
 	// Subtract dangers from interests
-	for (size_t i{}; i < m_ArraySize; i++)
+	for (size_t i{}; i < m_NrOfArrows; i++)
 	{
 		m_Interests[i] -= m_Dangers[i];
 	}
 
 	// Calculate final direction
 	Elite::Vector2 finalDirection{};
-	for (size_t i{}; i < m_ArraySize; i++)
+	for (size_t i{}; i < m_NrOfArrows; i++)
 	{
 		finalDirection += m_Directions[i] * m_Interests[i];
 	}
@@ -145,11 +145,11 @@ SteeringOutput ContextSteering::CalculateSteering(float deltaT, SteeringAgent* p
 
 void ContextSteering::SetArraySize(int size)
 {
-	m_ArraySize = size;
-	m_Dangers.resize(m_ArraySize);
-	m_Interests.resize(m_ArraySize);
-	m_Colors.resize(m_ArraySize);
-	m_Directions.resize(m_ArraySize);
+	m_NrOfArrows = size;
+	m_Dangers.resize(m_NrOfArrows);
+	m_Interests.resize(m_NrOfArrows);
+	m_Colors.resize(m_NrOfArrows);
+	m_Directions.resize(m_NrOfArrows);
 }
 
 bool ContextSteering::IsArrowInObstacle(const Elite::Vector2& start, const Elite::Vector2& dir, Obstacle* pObstacle)

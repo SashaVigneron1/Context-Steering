@@ -71,7 +71,7 @@ private:
 	bool m_InterpolateDangers = true;
 
 	std::vector<Obstacle*> m_pObstacles{};
-	size_t m_ArraySize = 16;
+	size_t m_NrOfArrows = 16;
 	float m_LookAheadRange = 10.f; // Default 5
 
 	// Only here for sparing out memory allocation each frame;

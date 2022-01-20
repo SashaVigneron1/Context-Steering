@@ -34,15 +34,22 @@ To keep it simple, we'll start off by simply checking if the arrow is colliding 
 If you want to, you can make it a little more complex, by actually interpolating this danger between 0 and 1, depending on the range of the obstacle.
 This will make the movement a little bit smoother than before. But depending on the use case, this may or may not be the result you want to achieve.
 
+Once we're done calculating the danger values, we want to subtract these from the interest values. Meaning that, if we have an interest value of 1, and a danger value of 1 for that same direction. We'll end up with an interest value of 0. This will make sure that this direction is ignored in the final direction's calculation.
+
 ![Danger_2](/Footage/DangerValue_2.gif?raw=true "DangerValue_2")
 
 ### 4. How To Get The Final Direction
+Finally, we have to merge all of these together, so we can calculate the desired direction of the agent.
+To do this, we basically sum up all the desired directions multiplied by their interest value and then divide these again by the number of arrows used in all previous calculations. If done correctly, this will ignore the directions headed to the obstacle(s). Or, if you're using the interpolating danger calculations, it will smoothly go around the object.
 
-
+And that's basically it! It's a very simple and quick way to implement a basic, but sufficient steering behaviour in your games!
 
 ## References
 - [KidScancode](https://kidscancode.org/godot_recipes/ai/context_map/)
+- [JamesKeats](https://jameskeats.com/portfolio/contextbhvr.html)
 
 ## Author
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
-Sasha Vigneron
+![ThankYou](https://media.giphy.com/media/3oEdva9BUHPIs2SkGk/giphy.gif)
+
+Sasha Vigneron,
+Group 2GD07, Digital Arts & Entertainment @ Howest Kortrijk, Belgium

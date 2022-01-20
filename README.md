@@ -30,7 +30,7 @@ And there you have it! As I mentioned above, it's quite a simple algorithm!
 
 ## Let's Get Started!
 ### 1. Creating The Arrows
-We start off by creating the arrows, this is a very simple for loop, calculating it's desired angle. (or direction)
+We start off by creating the arrows, this is a very simple for-loop, calculating it's desired angle. (or direction)
 Obviously, the size and the amount of arrows can be edited, experimenting with these variables can lead to different behaviours.
 For example, if you want to have an enemy that's able to detect and avoid obstacles from afar, you might want to increase the size of each arrow.
 But on the other hand, you might also want to increase the number of arrows, since, if you are looking far ahead, the gaps in between each direction grows, leading to potentially unseen obstacles, until your close. (See Image)

@@ -1,5 +1,7 @@
 ﻿  main.cpp
+  SteeringAgent.cpp
   App_SteeringBehaviors.cpp
+  SteeringBehaviors.cpp
   Generating Code...
   GPP_Framework.vcxproj -> C:\Users\sasha_7od7uy1\Desktop\Context-Steering\GPP_Framework\bin\Debug\GPP_Framework.exe
   0 File(s) copied

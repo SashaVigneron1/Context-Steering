@@ -7,7 +7,21 @@ The biggest improvement context steering offers, is the fact that you don't need
 Meaning, you're code will be much more limited, and possible more readable as well.
 
 ## The Algorithm Explained!
-
+The Context-Based Steering algorithm is quite a simple one, but before we get started, let's have a quick overview!
+Imagine your agent has 8 arrows around him, each in a different direction.
+![image](https://user-images.githubusercontent.com/45370607/150368152-db7c2f1a-f087-46bf-af3c-21419dc17085.png)
+Image comes from [KidScancode](https://kidscancode.org/godot_recipes/ai/context_map/)
+These arrows will hold the interest value, or in other words, the more-likely the agent is to move in that direction.
+We can then visualize these arrows as follows: 
+![image](https://user-images.githubusercontent.com/45370607/150368536-a418c582-6d90-45e4-9dc1-30b037c79653.png)
+Image comes from [KidScancode](https://kidscancode.org/godot_recipes/ai/context_map/)
+But as you can imagine, if this were the case, the agent would be willing to move in all directions, meaning they will cancel each other out, and your agent will remain stationary. We want the agent to be moving forward, so we will say that the less forward the arrow points, the less interest this direction should get. This leads us to the following interest vector: 
+![image](https://user-images.githubusercontent.com/45370607/150368955-f09c9236-8de7-4373-904a-8381bf0d15a5.png)
+Image comes from [KidScancode](https://kidscancode.org/godot_recipes/ai/context_map/)
+The last thing we want to cover in this algorithm, is avoiding obstacles. To handle this, we will create a second vector, let's call it the danger vector. 
+For each arrow, we will check if the arrow is colliding with an obstacle. If so, we will simply ignore the interest value for this direction.
+![image](https://user-images.githubusercontent.com/45370607/150369429-f8d6f34a-60bb-4b82-a6be-cfe59620cf06.png)
+Image comes from [KidScancode](https://kidscancode.org/godot_recipes/ai/context_map/)
 
 ## Let's Get Started!
 ### 1. Creating The Arrows

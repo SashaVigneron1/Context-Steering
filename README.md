@@ -51,5 +51,6 @@ And that's basically it! It's a very simple and quick way to implement a basic, 
 ## Author
 ![ThankYou](https://media.giphy.com/media/3oEdva9BUHPIs2SkGk/giphy.gif)
 
-Sasha Vigneron,
-Group 2GD07, Digital Arts & Entertainment @ Howest Kortrijk, Belgium
+Sasha Vigneron
+Group 2GD07
+Digital Arts & Entertainment @ Howest Kortrijk, Belgium

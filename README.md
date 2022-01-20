@@ -10,7 +10,7 @@ Meaning, you're code will be much more limited, and possible more readable as we
 
 
 ## Let's Get Started!
-# 1. Creating The Arrows
+### 1. Creating The Arrows
 We start off by creating the arrows, this is a very simple for loop, calculating it's desired angle. (or direction)
 Obviously, the size and the amount of arrows can be edited, experimenting with these variables can lead to different behaviours.
 For example, if you want to have an enemy that's able to detect and avoid obstacles from afar, you might want to increase the size of each arrow.
@@ -21,14 +21,14 @@ But on the other hand, you might also want to increase the number of arrows, sin
 On the other hand you also have to account the performance aspect. Since increasing the number of arrows will require more computations. 
 This however, does not apply to the size of the arrow, since my object detection is simply a distance check to the obstacle.
 
-# 2. Calculating Interest Values
+### 2. Calculating Interest Values
 For this part we will use an std::vector of floats, each value in range of [0,1]. 
 The higher the value, the more likely it is the agent will go that direction.
 
-# 3. Calculating Danger Values
+### 3. Calculating Danger Values
 
 
-# 4. How To Get The Final Direction
+### 4. How To Get The Final Direction
 
 
 
